@@ -1,0 +1,22 @@
+.col1{
+    background: linear-gradient(135deg, rgb(79, 230, 79) 50%, rgb(15, 126, 52));
+    display: flex;
+}
+.colinsider{
+    align-items: center;
+}
+.graph{
+    box-sizing: 1px solid black;
+    height: 200px;
+}
+.card-img-top {
+    width: 100%;
+    height: 25vw;
+    object-fit: cover;
+}
+@media  (min-width: 768px){
+    .col1{
+        height: 800px;
+    }
+}
+

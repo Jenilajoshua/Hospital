@@ -1,0 +1,181 @@
+<router-outlet></router-outlet>
+<div class="row">
+    <div class="col-sm-12 col-md-3">
+        <div class="row flex-nowrap">
+            <div class=" col-md-12  px-0  col1  p-5">
+                <div class="d-flex flex-column  mx-5 align-items-sm-start  text-white min-vh-60  colinside">
+                    <i class="fas fa-user-cog fa-6x " ></i><br>
+                    <h1>Admin</h1><br>
+                    <a  routerLink="" ><button class="btn btn-light btn-block">Logout</button></a>
+                
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-9">
+        <div class="container">
+            <div class="row mt-5">
+            <div class="col-sm-12 col-md-6 mb-5">
+                <a routerLink="/createstaff">
+                <div class="card">
+                    <div class="card-header text-center ">
+                        <h3>STAFFS'S DETAILS</h3>
+                    </div>
+                    <div class="card-body">
+                        <img src="../assets/images/staff.jpg" class="img-responsive card-img-top" alt="">
+                    </div>
+                    </div>
+                    </a>
+            </div>
+            <div class="col-sm-12 col-md-6 mb-5">
+                <a routerLink="/createdoctor">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h3>DOCTOR'S DETAILS</h3>
+                    </div>
+                    <div class="card-body ">
+                        <img src="../assets/images/doc.jpg" class="img-responsive card-img-top" alt="">
+                    </div>
+                    </div>
+                    </a>
+            </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- <div class="col-sm-12  col-md-9">
+        <div class="container">
+            
+            <div class="graph mt-3 " style="background-color: brown;">sdcasd
+            </div>
+            <div class="row">
+            <div class="cstaff mt-3 col-sm-12 col-md-6">
+                <div class="card">
+                    <h2 class="card-header text-center">Create Staff</h2>
+                    <div class="card-body">
+                        <form class=" formstyle">
+                            <div class="row">
+                                <div class="col-sm-12 form-group">
+                                    <select class="form-control" name="branch" >
+                                        <option default>Select Branch</option>
+                                    <option value="1">Staff nurse</option>
+                                    <option value="2">Ward boy</option>
+                                    <option value="3">Staff nurse</option>
+                                    <option value="4">Staff nurse</option>
+                                    <option value="5">Staff nurse</option>
+                                
+                                    </select>                         
+                                </div>
+                            <div class="col-sm-12 form-group">                        
+                                <input type="text" name="name" class="form-control" placeholder="Enter Name" [(ngModel)]="name">                        
+                            </div>
+                            <div class="col-sm-12 form-group">                        
+                                <input type="number" name="age" class="form-control" placeholder="Enter Age" [(ngModel)]="age">                       
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                    Male
+                                    </label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                    Female
+                                    </label>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-12 form-group">                        
+                                <input type="number" name="edu" class="form-control" placeholder="Education" >                       
+                            </div>
+                            <div class="col-sm-12 form-group">   
+                                <label for="add"> Address</label>                     
+                                <textarea type="text" height="50px;" name="add" class="form-control" > </textarea>                      
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                    <button type="submit" class="btn btn-primary" (click)="onClick();">Add</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+
+            </div>
+            
+            <div class="cdoctor mt-3 col-sm-12 col-md-6">
+                <div class="card">
+                    <h2 class="card-header text-center">Create Doctor</h2>
+                    <div class="card-body">
+                        <form class=" formstyle">
+                            <div class="row">
+                                <div class="col-sm-12 form-group">                        
+                                <input type="text" name="dname" class="form-control" placeholder="Enter Name" [(ngModel)]="dname">                        
+                            </div>
+                            <div class="col-sm-12 form-group">                        
+                                <input type="number" name="dage" class="form-control" placeholder="Enter Age" [(ngModel)]="dage">                       
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                    Male
+                                    </label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                    Female
+                                    </label>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-12 form-group">                        
+                                <input type="number" name="edu" class="form-control" placeholder="Education" >                       
+                            </div>
+                            <div class="col-sm-12 form-group">   
+                                <label for="add">Address</label>                     
+                                <textarea type="text" height="50px;" name="add" class="form-control" > </textarea>                      
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                    <button type="submit" class="btn btn-primary" (click)="onAdd();">Add</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <h2>STAFFS</h2>
+                <ul class="list-group" >
+                    <li class="list-group-item" *ngFor="let staff of persons">
+                        <div class="row">
+                        <div class="col-6">{{staff}} </div>
+                        <div class="col-6"><button type="button" (click)="onDelete();">delete</button></div>
+                        </div>
+                    </li>               
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <h2>DOCTORS</h2>
+                <ul class="list-group" >
+                    <li class="list-group-item" *ngFor="let doc of doctor">
+                        <div class="row">
+                        <div class="col-6">{{doc}} </div>
+                        <div class="col-6"><button (click)="onDelete();">delete</button></div>
+                        </div>
+                    </li>               
+                </ul>
+            </div>
+        </div>
+        </div>
+
+    </div> -->
+</div>

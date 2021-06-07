@@ -1,0 +1,93 @@
+<header><nav>
+    <div class="row pt-3 min-vh-20">
+        <div class="col-sm-1 p-2 logo"> <a  routerLink="" ><img src="../assets/images/logo-min.png" class="img-responsive logo"></a></div>
+        <div class="col-sm-11 text-center text-dark text-sm-small  " style="font-family: 'Kaushan Script', cursive;"><h1>THE RENAL PROJECT</h1></div>
+    </div>
+    
+</nav>
+</header>
+<div class="row">
+    <div class="col-sm-12 col-md-3">
+        <div class="row flex-nowrap">
+            <div class=" col-md-12  px-0  col1  p-5">
+                <div class="d-flex flex-column  mx-5 align-items-sm-start  text-white min-vh-60  colinside">
+                    <i class="fas fa-user-nurse fa-6x"></i><br>
+                    <h1>Staff</h1><br>
+                    <a  routerLink="" ><button class="btn btn-light btn-block">Logout</button></a>
+                
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-9">
+    <div class="row full">
+        <div class="container">
+            <div class="row">
+               
+            </div>
+            <div class="row mx-1">
+            <div class="cstaff mt-3 col-sm-12 col-md-6">
+                <div class="card">
+                    <h2 class="card-header text-center">Add Patients</h2>
+                    <div class="card-body">
+                        <form class=" formstyle">
+                            <div class="row">
+                                
+                            <div class="col-sm-12 form-group">                        
+                                <input type="text" name="name" class="form-control" placeholder="Enter Name" [(ngModel)]="name">                        
+                            </div>
+                            <div class="col-sm-12 form-group">                        
+                                <input type="number" name="age" class="form-control" placeholder="Enter Age" [(ngModel)]="age">                       
+                            </div>
+                            <div class="form-group">
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                    Male
+                                    </label>
+                                </div>
+                                <div class="form-check-inline">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                    Female
+                                    </label>
+                                </div>
+    
+                            </div>
+                            <div class="col-sm-12 form-group">                        
+                                <input type="text" name="edu" class="form-control" placeholder="Diagnosis" >                       
+                            </div>
+                            <div class="col-sm-12 form-group">   
+                                <label for="add"> Address</label>                     
+                                <textarea type="text" height="50px;" name="add" class="form-control" > </textarea>                      
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                    <button type="submit" class="btn btn-primary" (click)="onClick();">Add</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+            </div>
+    
+            </div>
+             <div class="col-sm-12 col-md-6 mt-5">
+                <h2>PATIENT'S LIST</h2>
+                <ul class="list-group" >
+                    <li class="list-group-item" *ngFor="let staff of persons">
+                        <div class="row">
+                        <div class="col-6">{{staff}} </div>
+                        <div class="col-3"><button class="btn btn-danger rounded-pill btn-sm" type="button" (click)="onDelete();">Delete</button></div>
+                        <div class="col-3"><button class="btn btn-warning rounded-pill btn-sm" type="button" (click)="onDelete();">Edit</button></div>
+                        </div>
+                    </li>               
+                </ul>
+            </div>
+            </div>
+        
+           
+       
+        </div>
+    
+    </div>
+    </div></div>

@@ -1,0 +1,10 @@
+.foot{
+max-height: 20px;
+}
+@media (max-width:576px){
+    .logo,.head{
+        max-width: 50px;
+        max-height: 50px;
+        font-size: 10px;
+    }
+}
