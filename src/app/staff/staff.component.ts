@@ -24,7 +24,11 @@ export class StaffComponent implements OnInit {
     this.persons.push(this.name +"||"+ this.age);
     
   }
-
+  onDelete(val){
+    this.persons.forEach((element,index)=>{
+      if(element==val) this.persons.splice(index,1);
+   });
+  }
   ngOnInit(): void {
   }
 

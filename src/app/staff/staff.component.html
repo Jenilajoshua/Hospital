@@ -74,10 +74,10 @@
              <div class="col-sm-12 col-md-6 mt-5">
                 <h2>PATIENT'S LIST</h2>
                 <ul class="list-group" >
-                    <li class="list-group-item" *ngFor="let staff of persons">
+                    <li class="list-group-item" *ngFor="let Patients of persons">
                         <div class="row">
-                        <div class="col-6">{{staff}} </div>
-                        <div class="col-3"><button class="btn btn-danger rounded-pill btn-sm" type="button" (click)="onDelete();">Delete</button></div>
+                        <div class="col-6">{{Patients}} </div>
+                        <div class="col-3"><button class="btn btn-danger rounded-pill btn-sm" type="button" (click)="onDelete(Patients);">Delete</button></div>
                         <div class="col-3"><button class="btn btn-warning rounded-pill btn-sm" type="button" (click)="onDelete();">Edit</button></div>
                         </div>
                     </li>               

@@ -23,7 +23,11 @@ export class CreatedoctorComponent implements OnInit {
   onAdd(){
     this.doctor.push(this.dname + "-" + this.dno);
   }
- 
+  onDelete(val){
+    this.doctor.forEach((element,index)=>{
+      if(element==val) this.doctor.splice(index,1);
+   });
+  }
 
   ngOnInit(): void {
   }

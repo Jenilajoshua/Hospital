@@ -1,35 +1,29 @@
 <div class="row full">
     <div class="container">
-        <div class="row">
-            <div class="col-sm-12 ">       
-                 <div class="graph mt-3 ">
-                   
-                </div>
-            </div>
-        </div>
+     
         <div class="row mx-1">
         <div class="cstaff mt-3 col-sm-12 col-md-6">
             <div class="card">
                 <h2 class="card-header text-center">Create Staff</h2>
                 <div class="card-body">
-                    <form class=" formstyle">
+                    <form class="formstyle" name="formdetail" #formdetail="ngForm" >
                         <div class="row">
                             <div class="col-sm-12 col-md-6 form-group">
-                                <select class="form-control" name="branch" >
+                                <select class="form-control" name="branch" #mylist>
                                     <option default>Select Branch</option>
-                                <option value="1">Staff nurse</option>
-                                <option value="2">Ward boy</option>
-                                <option value="3">Ambulance driver</option>
-                                <option value="4">Duty nurse</option>
-                                <option value="5">op nurse</option>
+                                <option value="0">Staff nurse</option>
+                                <option value="1">Ward boy</option>
+                                <option value="2">Ambulance driver</option>
+                                <option value="3">Duty nurse</option>
+                                <option value="4">op nurse</option>
                             
                                 </select>                         
                             </div>
                         <div class="col-sm-12 form-group">                        
-                            <input type="text" required name="name" class="form-control" placeholder="Enter Name" [(ngModel)]="name">                        
+                            <input type="text" required name="name" class="form-control" placeholder="Enter Name" [(ngModel)]="name" ngModel>                        
                         </div>
                         <div class="col-sm-12 form-group">                        
-                            <input type="number" required name="age" class="form-control" placeholder="Enter Age" [(ngModel)]="age">                       
+                            <input type="number" required name="age" class="form-control" placeholder="Enter Age" [(ngModel)]="age" ngModel>                       
                         </div>
                         <div class="form-group">
                             <div class="form-check-inline">
@@ -54,7 +48,7 @@
                             <textarea type="text" required height="50px;" name="add" class="form-control" > </textarea>                      
                         </div>
                         <div class="col-sm-12 form-group">
-                                <button type="submit" class="btn btn-primary" (click)="onClick();">Add</button>
+                                <button type="submit" class="btn btn-primary" (click)="onClick(mylist.value);">Add</button>
                             </div>
                         </div>
                     </form>
@@ -68,8 +62,8 @@
                 <li class="list-group-item" *ngFor="let staff of persons">
                     <div class="row">
                     <div class="col-6">{{staff}} </div>
-                    <div class="col-3"><button class="btn btn-sm btn-danger" type="button" (click)="onDelete();">Delete</button></div>
-                    <div class="col-3"><button class="btn btn-sm btn-warning" type="button" (click)="onDelete();">Edit</button></div>
+                    <div class="col-3"><button class="btn btn-sm btn-danger" type="button" (click)="onDelete(staff);">Delete</button></div>
+                    <div class="col-3"><button class="btn btn-sm btn-warning" type="button" (click)="onview(formdetail)">View</button></div>
                     </div>
                 </li>               
             </ul>
