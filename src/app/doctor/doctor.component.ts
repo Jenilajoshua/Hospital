@@ -19,7 +19,11 @@ export class DoctorComponent implements OnInit {
    
 
   }
-
+  onDelete(val){
+    this.persons.forEach((element,index)=>{
+      if(element==val) this.persons.splice(index,1);
+   });
+  }
   ngOnInit(): void {
   }
 
