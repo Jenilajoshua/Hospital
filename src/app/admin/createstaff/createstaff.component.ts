@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import * as Chart from 'chart.js';
+import model from '../../../app/model';
 
 @Component({
   selector: 'app-createstaff',
@@ -9,43 +9,58 @@ import * as Chart from 'chart.js';
 })
 export class CreatestaffComponent implements OnInit {
 
-  // for:FormGroup=new FormGroup({
-    
-  // })
-  
-  
-  persons:string[]=[];
 
-  name:string="";
-  age:string="";
+  persons:model[]=[
+    {
+    branch:"Staff nurse",
+     names:"jenila",
+     age:23,
+     flexRadioDefault1:"F",
+     edu:"mbbs",
+     add:"chennai"
+    }
+  ]
+  display:boolean=false;
+ 
+  resetdata:boolean=false;
   branch=["Staff nurse","Ward boy","Ambulance driver","Duty nurse","op nurse"];
 
 
   constructor() { 
    
-    this.persons.push("Reena - Staff nurse");
-    this.persons.push("Rana - op nurse");
-    this.persons.push("Ravi  - Ambulance driver");
+    // this.persons.push("Reena - Staff nurse");
+    // this.persons.push("Rana - op nurse");
+    // this.persons.push("Ravi  - Ambulance driver");
    
    
 
   }
-  onClick(val){
-    this.persons.push(this.name +"-"+ this.branch[val]);
+  onsubmit(formdetail){
+    // this.persons.push(this.name +"-"+ this.branch[val]);
     
-    
+    console.log(formdetail.value)
     
   }
-  onview(formdetail){
-   alert(formdetail.value)
+  onview(){
+   
+   this.display=true;
+    
   }
-  
+  onadd(formdetail){
+    // this.persons.push(formdetail.value.names +"-"+ formdetail.value.branch);
+    this.persons.push(formdetail.value)
+    
+    formdetail.reset()
+    console.log("person",this.persons)   
+  }
   onDelete(val){
     this.persons.forEach((element,index)=>{
       if(element==val) this.persons.splice(index,1);
    });
   }
-
+  onCloseClick() {
+    this.display = false;
+  }
 
 
   ngOnInit(): void {
