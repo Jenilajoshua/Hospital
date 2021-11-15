@@ -23,32 +23,29 @@
     <div class="col-sm-12 col-md-9">
     <div class="row full">
         <div class="container">
-            <div class="row">
-               
-            </div>
-            <div class="row mx-1">
+           <div class="row mx-1">
             <div class="cstaff mt-3 col-sm-12 col-md-6">
                 <div class="card">
                     <h2 class="card-header text-center">Add Patients</h2>
                     <div class="card-body">
-                        <form class=" formstyle">
+                        <form class="formstyle" name="formdetail" #formdetail="ngForm">
                             <div class="row">
                                 
                             <div class="col-sm-12 form-group">                        
-                                <input type="text" name="name" class="form-control" placeholder="Enter Name" [(ngModel)]="name">                        
+                                <input type="text" name="names" class="form-control" placeholder="Enter Name" ngModel>                        
                             </div>
                             <div class="col-sm-12 form-group">                        
-                                <input type="number" name="age" class="form-control" placeholder="Enter Age" [(ngModel)]="age">                       
+                                <input type="number" name="age" class="form-control" placeholder="Enter Age" ngModel>                       
                             </div>
                             <div class="form-group">
                                 <div class="form-check-inline">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <input class="form-check-input" type="radio" name="gender" value="M" ngModel id="flexRadioDefault1">
                                     <label class="form-check-label" for="flexRadioDefault1">
                                     Male
                                     </label>
                                 </div>
                                 <div class="form-check-inline">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                    <input class="form-check-input" type="radio" name="gender" value="F" ngModel id="flexRadioDefault2">
                                     <label class="form-check-label" for="flexRadioDefault2">
                                     Female
                                     </label>
@@ -56,14 +53,14 @@
     
                             </div>
                             <div class="col-sm-12 form-group">                        
-                                <input type="text" name="edu" class="form-control" placeholder="Diagnosis" >                       
+                                <input type="text" name="diag" class="form-control" placeholder="Diagnosis" ngModel>                       
                             </div>
                             <div class="col-sm-12 form-group">   
                                 <label for="add"> Address</label>                     
-                                <textarea type="text" height="50px;" name="add" class="form-control" > </textarea>                      
+                                <textarea type="text" height="50px;" name="add" class="form-control"  ngModel> </textarea>                      
                             </div>
                             <div class="col-sm-12 form-group">
-                                    <button type="submit" class="btn btn-primary" (click)="onClick();">Add</button>
+                                    <button type="submit" class="btn btn-primary" (click)="onadd(formdetail);">Add</button>
                                 </div>
                             </div>
                         </form>
@@ -72,21 +69,52 @@
     
             </div>
              <div class="col-sm-12 col-md-6 mt-5">
-                <h2>PATIENT'S LIST</h2>
-                <ul class="list-group" >
-                    <li class="list-group-item" *ngFor="let Patients of persons">
-                        <div class="row">
-                        <div class="col-6">{{Patients}} </div>
-                        <div class="col-3"><button class="btn btn-danger rounded-pill btn-sm" type="button" (click)="onDelete(Patients);">Delete</button></div>
-                        <div class="col-3"><button class="btn btn-warning rounded-pill btn-sm" type="button" (click)="onDelete();">Edit</button></div>
-                        </div>
-                    </li>               
-                </ul>
+                 <div class="row">
+                     <div class="col-sm-12">
+                        <h2>PATIENT'S LIST</h2>
+                        <ul class="list-group" >
+                            <li class="list-group-item" *ngFor="let Pat of patient">
+                                <div class="row">
+                                <div class="col-8">{{Pat.names}} || {{Pat.diag}} </div>
+                                <div class="col-4"><button class="btn btn-danger rounded-pill btn-sm" type="button" (click)="onDelete(Pat);">Delete</button></div>
+                               
+                                </div>
+                            </li>               
+                        </ul>
+                     </div>
+                     <div class="col-sm-12 mt-5 text-center">
+                        <button class="btn btn-lg btn-warning " (click)="onview()">View Patient Details</button>
+                     </div>
+                 </div>
+
             </div>
             </div>
-        
-           
-       
+            <div class="row mt-5 mb-5 mx-2">
+                <div class="col-sm-12  bg-light" *ngIf="display">
+                    <div class="close" (click)="onCloseClick()">x</div>
+                    <div class="container-fluid">
+                        <table class="table table-striped table-responsive-sm"> 
+                          <thead>
+                              <tr>
+                                <th scope="col">Name</th>                                
+                                <th scope="col">Age</th>
+                                <th scope="col">Diagnosis</th>
+                                <th scope="col">Address</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let per of patient">
+                              <td>{{ per.names }} ({{per.gender}})</td>
+                              <td>{{ per.age }}</td>
+                              <td>{{ per.diag }}</td>                           
+                              <td>{{ per.add }}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                </div>
+            </div>
+          
         </div>
     
     </div>

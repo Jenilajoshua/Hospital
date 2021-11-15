@@ -4,14 +4,14 @@
     background: url('../../../assets/images/docinside.jpg') ;
     background-position: left top;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
     height: 100vh;
     overflow-x: hidden;
     
 }
 @media  (min-width: 768px){
     .full{
-        background-size: 100% auto;
+        background-size: 100% 100%;
         
     }
 }

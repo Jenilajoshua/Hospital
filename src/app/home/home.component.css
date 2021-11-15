@@ -15,8 +15,11 @@
 .fullpage{
 
     background-image: url('../../assets/images/bg3_cropped.png');
-
-    background-size:contain;
+    background-position: left top;
+    background-repeat: no-repeat;
+    height: 100vh;
+    overflow-x: hidden;
+    background-size:cover
  
     
 
@@ -24,4 +27,13 @@
 .reception{
     max-width: 500px;
     max-height: 500px;
+}
+@media  (min-width: 768px){
+    .full{
+        background-size: 100% 100%;
+        
+    }
+    .login{
+        margin-top: 150px;
+    }
 }

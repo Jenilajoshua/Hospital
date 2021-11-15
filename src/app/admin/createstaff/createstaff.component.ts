@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import model from '../../../app/model';
+import {model} from '../../../app/model';
 
 @Component({
   selector: 'app-createstaff',
@@ -15,7 +15,7 @@ export class CreatestaffComponent implements OnInit {
     branch:"Staff nurse",
      names:"jenila",
      age:23,
-     flexRadioDefault1:"F",
+     gender:"F",
      edu:"mbbs",
      add:"chennai"
     }
@@ -38,7 +38,7 @@ export class CreatestaffComponent implements OnInit {
   onsubmit(formdetail){
     // this.persons.push(this.name +"-"+ this.branch[val]);
     
-    console.log(formdetail.value)
+    // console.log(formdetail.value)
     
   }
   onview(){

@@ -1,5 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
- 
+import { patients} from '../model';
+
 @Component({
   selector: 'app-staff',
   templateUrl: './staff.component.html',
@@ -7,29 +8,48 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class StaffComponent implements OnInit {
 
+patient:patients[]=[
+    {
+     names:"jenila",
+     age:23,
+     gender:"F",
+     diag:"Dialysis",
+     add:"chennai"
+    }
+  ]
+  display:boolean=false;
   persons:string[]=[];
 
-  @Input() name:string="";
-  @Input() age:string="";
+  // @Input() name:string="";
+  // @Input() age:string="";
 
-  constructor() { 
-    this.persons.push("Jeba || 43");
-    this.persons.push("Reka || 43");
-    this.persons.push("Raji || 33");
+  constructor() {   
    
+ 
+  }
+  onview(){
    
-
-  }
-  onClick(){
-    this.persons.push(this.name +"||"+ this.age);
-    
-  }
-  onDelete(val){
-    this.persons.forEach((element,index)=>{
-      if(element==val) this.persons.splice(index,1);
-   });
-  }
+    this.display=true;
+     
+   }
+   onadd(formdetail){
+     
+     this.patient.push(formdetail.value)
+     
+     formdetail.reset()
+     
+   }
+   onDelete(val){
+     this.patient.forEach((element,index)=>{
+       if(element==val) this.patient.splice(index,1);
+    });
+   }
+   onCloseClick() {
+     this.display = false;
+   }
+ 
   ngOnInit(): void {
   }
 
 }
+

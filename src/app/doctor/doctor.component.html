@@ -21,7 +21,35 @@
     </div>
  
         <div class="col-sm-12 col-md-9 mt-5 ">
-            <h2 align="center">PATIENT'S LIST</h2>
+            <div class="row mx-5 mt-5 text-center">
+                <button class="btn btn-lg btn-warning " (click)="onview()">View Patient Details</button>
+             </div>
+             <div class="row mt-5 mb-5 mx-2">
+                <div class="col-sm-12  bg-light" *ngIf="display">
+                    <div class="close" (click)="onCloseClick()">x</div>
+                    <div class="container-fluid">
+                        <table class="table table-striped table-responsive-sm mt-3"> 
+                          <thead>
+                              <tr>
+                                <th scope="col">Name</th>                                
+                                <th scope="col">Age</th>
+                                <th scope="col">Diagnosis</th>
+                                <th scope="col">Address</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                            <tr *ngFor="let per of patient">
+                              <td>{{ per.names }} ({{per.gender}})</td>
+                              <td>{{ per.age }}</td>
+                              <td>{{ per.diag }}</td>                           
+                              <td>{{ per.add }}</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                </div>
+            </div>
+            <!-- <h2 align="center">PATIENT'S LIST</h2>
             <ul class="list-group mx-2" >
                 <li class="list-group-item" *ngFor="let Patients of persons">
                     <div class="row">
@@ -30,7 +58,7 @@
                     <div class="col-3"><button class="btn btn-warning rounded-pill btn-sm" type="button" (click)="onDelete();">Edit</button></div>
                     </div>
                 </li>               
-            </ul>
+            </ul> -->
         </div>
    
     </div>

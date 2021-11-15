@@ -1,6 +1,6 @@
-.foot{
-max-height: 20px;
-}
+/* .foot{
+max-height: 10px;
+} */
 @media (max-width:576px){
     .logo,.head{
         max-width: 50px;
